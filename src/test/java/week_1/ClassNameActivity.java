@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class UsingNameActivity {
+public class ClassNameActivity {
 
     public static void main(String[] args) {
 
@@ -12,15 +12,15 @@ public class UsingNameActivity {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.facebook.com");
+        driver.get("https://retail.tekschool-students.com/");
 
-        WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("example@gmail.com");
+        By tekschoolLocator = By.className("top-nav__logo");
 
-        WebElement password = driver.findElement(By.name("pass"));
-        password.sendKeys("example@123");
+        WebElement tekschoolElement = driver.findElement(tekschoolLocator);
+
+        System.out.println(tekschoolElement.getText());
 
         driver.quit();
-    }
 
+    }
 }
