@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class RecapActivity {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ChromeDriver driver = new ChromeDriver();
 
@@ -22,9 +22,11 @@ public class RecapActivity {
         WebElement pass = driver.findElement(By.id("password"));
         pass.sendKeys("password@123");
 
-        By login = By.id("logiBtn");
+        By login = By.id("loginBtn");
         WebElement loginElement = driver.findElement(login);
         loginElement.click();
+
+        Thread.sleep(2000);
 
         By errorLocator = By.className("error");
         WebElement errorElement = driver.findElement(errorLocator);
