@@ -20,7 +20,15 @@ public class UsingXpath {
 
         By playStation = By.xpath("/html/body/div/div/div/div[3]/div/div/p[1]");
         WebElement playStationElement = driver.findElement(playStation);
-        System.out.println(playStationElement.getText());
+        playStationElement.click();
+
+        Thread.sleep(1000);
+
+        By playStationTitle = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/h1");
+        WebElement playStationTitleElement = driver.findElement(playStationTitle);
+        System.out.println(playStationTitleElement.getText());
+
+        Thread.sleep(2000);
 
         driver.quit();
     }
