@@ -1,13 +1,26 @@
 package week_1;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.Scanner;
 
 public class ReviewActivity {
 
     public static void main(String[] args) throws InterruptedException {
 
-        ChromeDriver driver = new ChromeDriver();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please choose your browser chrome or edge? ");
+        String userInput = input.next();
+
+        WebDriver driver = null;
+
+        if( userInput.equals("chrome")){
+            driver = new ChromeDriver();
+        }else if(userInput.equals("edge")){
+            driver = new EdgeDriver();
+        }
 
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
@@ -16,17 +29,6 @@ public class ReviewActivity {
         Thread.sleep(2000);
 
         driver.quit();
-
-        EdgeDriver edriver = new EdgeDriver();
-
-        edriver.manage().window().maximize();
-        edriver.get("https://retail.tekschool-students.com/");
-        System.out.println(edriver.getTitle());
-
-        Thread.sleep(2000);
-
-        edriver.quit();
-
 
 
 
