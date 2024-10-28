@@ -11,27 +11,32 @@ public class Activity3 {
         ChromeDriver driver = new ChromeDriver();
 
         driver.manage().window().maximize();
-        driver.get("https://retail.tekschool-students.com/");
+        driver.get("https://dev.retail.tekschool-students.com/");
 
-        By signIn = By.id("signinLink");
+        Thread.sleep(3000);
+
+        By signIn = By.linkText("Sign in");
         WebElement signInElement = driver.findElement(signIn);
         signInElement.click();
 
-        WebElement email = driver.findElement(By.id("email"));
+        Thread.sleep(1000);
+
+        WebElement email = driver.findElement(By.name("email"));
         email.sendKeys("wrong@gmail.com");
 
-        WebElement pass = driver.findElement(By.id("password"));
+        WebElement pass = driver.findElement(By.name("password"));
         pass.sendKeys("passwordWrong");
+        Thread.sleep(1000);
 
-        By login = By.id("loginBtn");
+        By login = By.className("ant-btn-primary");
         WebElement loginElement = driver.findElement(login);
         loginElement.click();
 
         Thread.sleep(2000);
 
-        By errorLocator = By.className("error");
-        WebElement errorElement = driver.findElement(errorLocator);
-        System.out.println(errorElement.getText());
+//        By errorLocator = By.className("ant-alert-message");
+//        WebElement errorElement = driver.findElement(errorLocator);
+//        System.out.println(errorElement.getText());
 
         driver.quit();
     }
