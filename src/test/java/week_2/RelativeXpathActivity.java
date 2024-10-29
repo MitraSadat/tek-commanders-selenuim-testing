@@ -13,10 +13,10 @@ public class RelativeXpathActivity {
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
 
-        WebElement search = driver.findElement(By.id("searchInput"));
+        WebElement search = driver.findElement(By.xpath("//input[@class='search__input']"));
         search.sendKeys("keyboard");
 
-        driver.findElement(By.id("searchBtn")).click();
+        driver.findElement(By.xpath("//button[@class='search__btn']")).click();
 
         Thread.sleep(1000);
 
