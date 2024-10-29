@@ -20,7 +20,7 @@ public class RelativeXpathActivity {
 
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("//img[@alt='NPET K10 Gaming Keyboard']")).click();
+        driver.findElement(By.xpath("//div[@class='products']/div[1]")).click();
 
         Thread.sleep(1000);
 
