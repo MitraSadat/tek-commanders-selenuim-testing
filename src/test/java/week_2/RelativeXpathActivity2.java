@@ -33,6 +33,25 @@ public class RelativeXpathActivity2 {
         if(logout.isDisplayed()) System.out.println("logged in");
         else System.out.println("not logged in");
 
+
+        driver.findElement(By.xpath("//input[@id='searchInput']")).sendKeys("keyboard");
+        driver.findElement(By.xpath("//button[@id='searchBtn']")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//div[@class='products']/div[1]/p[@class='products__name']")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[@id='addToCartBtn']")).click();
+        Thread.sleep(1000);
+        WebElement cartQuantity = driver.findElement(By.xpath("//span[@id='cartQuantity']"));
+
+        String cartCount = cartQuantity.getText();
+
+        if (cartCount.equals("1")) {
+            System.out.println("Keyboard added to cart.");
+        } else {
+            System.out.println("Not added.");
+        }
+
+
         driver.quit();
 
     }
