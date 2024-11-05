@@ -47,7 +47,7 @@ public class WaitActivity {
         accountElement.click();
 
         WebElement phoneElement = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
+                ExpectedConditions.presenceOfElementLocated(
                         By.cssSelector("input#personalPhoneInput")));
         phoneElement.clear();
         phoneElement.sendKeys("12312312310");
