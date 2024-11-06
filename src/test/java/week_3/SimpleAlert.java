@@ -16,7 +16,7 @@ public class SimpleAlert {
         driver.get(url);
         driver.manage().window().maximize();
 
-        WebElement alertBtn = driver.findElement(By.id("confirmedBtn"));
+        WebElement alertBtn = driver.findElement(By.id("confirmBtn"));
         alertBtn.click();
 
         Thread.sleep(2000);
