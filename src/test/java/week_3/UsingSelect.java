@@ -33,7 +33,7 @@ public class UsingSelect {
 
         languageDropDown.selectByVisibleText("Java");
 
-        System.out.println(languageDropDown.getFirstSelectedOption());
+        System.out.println(languageDropDown.getFirstSelectedOption().getText());
 
         driver.quit();
 
